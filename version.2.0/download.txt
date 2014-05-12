@@ -1,0 +1,18 @@
+根据歌名 歌手 搜索歌曲
+
+采用两种方式
+有歌手名和歌名采用value=歌名&artist=歌手
+如果歌手名和歌曲名连在一起则采用value=歌名-歌手名
+
+http://shopcgi.qqmusic.qq.com/fcgi-bin/shopsearch.fcg?value=%D5%C5%BE%B4%D0%F9%B6%CF%B5%E3&artist=&page_record_num=10
+
+返回数据
+searchCallBack({result:"0",msg:"",totalnum:"23",curnum:"10",search:"断点",songlist:[{idx:"1",song_id:"1691101",song_name:"断点",album_name:"男声试音天碟",singer_name:"群星",location:"7",singer_id:"12920",album_id:"134197",price:"250"},{idx:"2",song_id:"1291209",song_name:"断点",album_name:"My 1st Collection",singer_name:"张敬轩(Hins)",location:"1",singer_id:"219",album_id:"33641",price:"250"},{idx:"3",song_id:"887150",song_name:"断点",album_name:"秀色",singer_name:"赵蓉",location:"9",singer_id:"14274",album_id:"75019",price:"250"},{idx:"4",song_id:"826048",song_name:"断点",album_name:"P.S. I Love You 新歌+精选",singer_name:"张敬轩(Hins)",location:"2",singer_id:"219",album_id:"69972",price:"320"},{idx:"5",song_id:"775685",song_name:"断点",album_name:"王雅洁LPCD45",singer_name:"王雅洁(Nicole Wang)",location:"10",singer_id:"11901",album_id:"65380",price:"250"},{idx:"6",song_id:"761383",song_name:"断点",album_name:"汽车Hi-Fi音乐2 靓绝流行歌曲",singer_name:"群星",location:"6",singer_id:"12920",album_id:"64286",price:"250"},{idx:"7",song_id:"718281",song_name:"断点",album_name:"极度空间",singer_name:"梦雨",location:"1",singer_id:"33461",album_id:"60747",price:"270"},{idx:"8",song_id:"446730",song_name:"断点",album_name:"天使爱寂寞",singer_name:"赵蓉",location:"3",singer_id:"14274",album_id:"36388",price:"250"},{idx:"9",song_id:"427331",song_name:"断点",album_name:"酷爱张敬轩2008演唱会",singer_name:"张敬轩(Hins)",location:"10",singer_id:"219",album_id:"34739",price:"320"},{idx:"10",song_id:"256057",song_name:"断点",album_name:"感觉我",singer_name:"黎明花",location:"8",singer_id:"8504",album_id:"21935",price:"250"}]})
+
+
+根据id下载歌词
+
+http://music.qq.com/miniportal/static/lyric/9/1291209.xml
+
+其中9为 id%100 取余
+1291209为歌曲id

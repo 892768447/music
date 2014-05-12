@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/music_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="file://IMAGES/main/sound_hound_album_back.png" >
+
+    <TextView
+        android:id="@+id/music_main_play_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:textColor="#FFFFFF"
+        android:text="00:00" />
+
+    <TextView
+        android:id="@+id/music_main_end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textColor="#FFFFFF"
+        android:text="00:00" />
+
+    <TextView
+        android:id="@+id/music_main_progressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:layout_above="@+id/music_main_play_time"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="left|bottom"
+        android:maxLength="100"
+        android:text=""
+        android:textColor="#FFFFFF" />
+
+    <LinearLayout
+        android:id="@+id/music_main_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/music_main_progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" >
+
+        <Button
+            android:id="@+id/music_main_pre_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="file://IMAGES/main/clip_pre_pressed.png" />
+
+        <Button
+            android:id="@+id/music_main_play_pause_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="file://IMAGES/main/clip_play_pressed.png" />
+
+        <Button
+            android:id="@+id/music_main_next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="file://IMAGES/main/clip_next_pressed.png" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/music_main_left_horn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="file://IMAGES/main/playview_scrap_left.png" />
+
+    <ImageView
+        android:id="@+id/music_main_rigth_horn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="file://IMAGES/main/playview_scrap_rigth.png" />
+
+    <TextView
+        android:id="@+id/music_main_lrc_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/music_main_control"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text=""
+        android:textColor="#999999" />
+
+    <TextView
+        android:id="@+id/music_main_lrc_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_above="@+id/music_main_lrc_text3"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="#999999" />
+
+    <TextView
+        android:id="@+id/music_main_lrc_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_above="@+id/music_main_lrc_text2"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/music_main_music_title"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_above="@+id/music_main_lrc_text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text=""
+        android:textColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/music_main_disc_extern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/music_main_music_title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="36dp"
+        android:src="file://IMAGES/disc/disc_extern_0.png" />
+
+    <RelativeLayout
+        android:id="@+id/music_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#a0000000"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/music_list_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="file://IMAGES/loading/sound_hound_loading_0.png"
+            android:visibility="visible" />
+
+        <ListView
+            android:id="@+id/music_list_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/music_list_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00000000"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TableLayout
+            android:id="@+id/music_list_dialog_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="file://IMAGES/dialog/dialog_bg.png" >
+
+            <TextView
+                android:id="@+id/music_list_dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#FFFFFF" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/music_list_dialog_select_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="file://IMAGES/dialog/from_list_play_pressed.png" />
+
+                <TextView
+                    android:id="@+id/music_list_dialog_select_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="播放选择歌曲"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/music_list_dialog_select_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_dolby_icon_press.png" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/music_list_dialog_share_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="file://IMAGES/dialog/sound_hound_share_press.png" />
+
+                <TextView
+                    android:id="@+id/music_list_dialog_share_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="分享选择歌曲"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/music_list_dialog_share_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_dolby_icon_press.png" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/music_list_dialog_dellist_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="file://IMAGES/dialog/list_item_delete_pressed.png" />
+
+                <TextView
+                    android:id="@+id/music_list_dialog_dellist_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="删除选择歌曲"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/music_list_dialog_dellist_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_dolby_icon_press.png" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/music_list_dialog_deldisk_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="file://IMAGES/dialog/list_item_delete_pressed.png" />
+
+                <TextView
+                    android:id="@+id/music_list_dialog_deldisk_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="抹消选择歌曲"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/music_list_dialog_deldisk_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_dolby_icon_press.png" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/music_list_alert_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TableLayout
+            android:id="@+id/music_list_alert_dialog_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="file://IMAGES/dialog/dialog_bg.png" >
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/music_list_alert_dialog_titile_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="file://IMAGES/dialog/list_item_details_pressed.png" />
+
+                <TextView
+                    android:id="@+id/music_list_alert_dialog_titile_text"
+                    android:layout_width="72dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="left|center"
+                    android:text="提示"
+                    android:textColor="#FFFFFF" />
+
+                <View
+                    android:layout_width="72dp"
+                    android:layout_height="fill_parent" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/music_list_alert_dialog_info"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="确定要删除吗?"
+                android:textColor="#FFFFFF" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/music_list_alert_dialog_ok_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_none_icon_press.png"
+                    android:text="确定"
+                    android:textColor="#FFFFFF" />
+
+                <View
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+
+                <Button
+                    android:id="@+id/music_list_alert_dialog_cancle_btn"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
+                    android:background="file://IMAGES/dialog/effect_dirac_icon_press.png"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</RelativeLayout>
