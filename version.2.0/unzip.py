@@ -5,7 +5,7 @@ __Copyright__ = 'Copyright (c) 2014 ざ凍結の→愛'
 __Version__ = 'Version 2.0'
 
 from zipfile import ZipFile
-from os import remove
+#from os import remove
 from config import ImageZipPath,ImagesPath
 
 def unZipRes():
@@ -13,6 +13,6 @@ def unZipRes():
         fp = ZipFile(ImageZipPath,'r')
         for f in fp.namelist():
             fp.extract(f,ImagesPath)
-        remove(ImageZipPath)
+        #remove(ImageZipPath)
     except Exception,e:
         print e
